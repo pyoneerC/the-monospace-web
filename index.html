@@ -1,361 +1,477 @@
+```html
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Oskar Wickström" />
-  <title>The Monospace Web</title>
-  <link rel="stylesheet" href="src/reset.css" />
-  <link rel="stylesheet" href="src/index.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Oskar Wickström" />
+    <title>Labs - Maxcomperatore</title>
+    <link rel="stylesheet" href="src/reset.css" />
+    <link rel="stylesheet" href="src/index.css" />
 </head>
 <body>
-<table class="header">
-  <tr>
-    <td colspan="2" rowspan="2" class="width-auto">
-      <h1 class="title">The Monospace Web</h1>
-      <span class="subtitle">A minimalist design exploration</span>
-    </td>
-    <th>Version</th>
-    <td class="width-min">v0.1.5</td>
-  </tr>
-  <tr>
-    <th>Updated</th>
-    <td class="width-min"><time style="white-space: pre;">2025-01-25</time></td>
-  </tr>
-  <tr>
-    <th class="width-min">Author</th>
-    <td class="width-auto"><a href="https://wickstrom.tech"><cite>Oskar
-Wickström</cite></a></td>
-    <th class="width-min">License</th>
-    <td>MIT</td>
-  </tr>
-</table>
-<label class="debug-toggle-label"><input type="checkbox" class="debug-toggle" /> Debug mode</label>
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Contents</h2>
-<ul class="incremental">
-<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
-<li><a href="#the-basics" id="toc-the-basics">The Basics</a></li>
-<li><a href="#lists" id="toc-lists">Lists</a></li>
-<li><a href="#tables" id="toc-tables">Tables</a></li>
-<li><a href="#forms" id="toc-forms">Forms</a></li>
-<li><a href="#grids" id="toc-grids">Grids</a></li>
-<li><a href="#ascii-drawings" id="toc-ascii-drawings">ASCII
-Drawings</a></li>
-<li><a href="#media" id="toc-media">Media</a></li>
-<li><a href="#discussion" id="toc-discussion">Discussion</a></li>
-</ul>
-</nav>
-<h2 id="introduction">Introduction</h2>
-<p>Monospace fonts are dear to many of us. Some find them more readable,
-consistent, and beautiful, than their proportional alternatives. Maybe
-we’re just brainwashed from spending years in terminals? Or are we
-hopelessly nostalgic? I’m not sure. But I like them, and that’s why I
-started experimenting with all-monospace Web.</p>
-<p>On this page, I use a monospace grid to align text and draw diagrams.
-It’s generated from a simple Markdown document (using Pandoc), and the
-CSS and a tiny bit of Javascript renders it on the grid. The page is
-responsive, shrinking in character-sized steps. Standard elements should
-<em>just work</em>, at least that’s the goal. It’s semantic HTML,
-rendered as if we were back in the 70s.</p>
-<p>All right, but is this even a good idea? It’s a technical and
-creative challenge and I like the aestethic. If you’d like to use it,
-feel free to fork or copy the bits you need, respecting the license. I
-might update it over time with improvements and support for more
-standard elements.</p>
-<h2 id="the-basics">The Basics</h2>
-<p>This document uses a few extra classes here and there, but mostly
-it’s just markup. This, for instance, is a regular paragraph.</p>
-<p>Look at this horizontal break:</p>
-<hr>
-<p>Lovely. We can hide stuff in the <code>&lt;details</code>&gt;
-element:</p>
-<details>
-<summary>
-A short summary of the contents
-</summary>
-<p>
-Hidden gems.
-</p>
-</details>
-<h2 id="lists">Lists</h2>
-<p>This is a plain old bulleted list:</p>
-<ul class="incremental">
-<li>Banana</li>
-<li>Paper boat</li>
-<li>Cucumber</li>
-<li>Rocket</li>
-</ul>
-<p>Ordered lists look pretty much as you’d expect:</p>
-<ol class="incremental" type="1">
-<li>Goals</li>
-<li>Motivations
-<ol class="incremental" type="1">
-<li>Intrinsic</li>
-<li>Extrinsic</li>
-</ol></li>
-<li>Second-order effects</li>
-</ol>
-<p>It’s nice to visualize trees. This is a regular unordered list with a
-<code>tree</code> class:</p>
-<ul class="tree">
-<li>
-<p style="margin: 0;">
-<strong>/dev/nvme0n1p2</strong>
-</p>
-<ul class="incremental">
-<li>usr
-<ul class="incremental">
-<li>local<br />
-</li>
-<li>share<br />
-</li>
-<li>libexec<br />
-</li>
-<li>include<br />
-</li>
-<li>sbin<br />
-</li>
-<li>src<br />
-</li>
-<li>lib64<br />
-</li>
-<li>lib<br />
-</li>
-<li>bin<br />
-</li>
-<li>games
-<ul class="incremental">
-<li>solitaire</li>
-<li>snake</li>
-<li>tic-tac-toe</li>
-</ul></li>
-<li>media<br />
-</li>
-</ul></li>
-<li>media<br />
-</li>
-<li>run<br />
-</li>
-<li>tmp</li>
-</ul>
-</li>
-</ul>
-<h2 id="tables">Tables</h2>
-<p>We can use regular tables that automatically adjust to the monospace
-grid. They’re responsive.</p>
-<table>
-<thead>
-<tr>
-<th class="width-min">
-Name
-</th>
-<th class="width-auto">
-Dimensions
-</th>
-<th class="width-min">
-Position
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-Boboli Obelisk
-</td>
-<td>
-1.41m × 1.41m × 4.87m
-</td>
-<td>
-43°45’50.78”N 11°15’3.34”E
-</td>
-</tr>
-<tr>
-<td>
-Pyramid of Khafre
-</td>
-<td>
-215.25m × 215.25m × 136.4m
-</td>
-<td>
-29°58’34”N 31°07’51”E
-</td>
-</tr>
-</tbody>
-</table>
-<p>Note that only one column is allowed to grow.</p>
-<h2 id="forms">Forms</h2>
-<p>Here are some buttons:</p>
-<nav>
-<button>
-Reset
-</button>
-<button>
-Save
-</button>
-</nav>
-<p>And inputs:</p>
-<form class="grid">
-<label>First name
-<input type="text" placeholder="Placeholder..." /></label> <label>Last
-name <input type="text" placeholder="Text goes here..." /></label>
-<label>Age <input type="text" value="30" /></label>
-</form>
-<p>And radio buttons:</p>
-<form class="grid">
-<label><input name="radio" type="radio" /> Option #1</label>
-<label><input name="radio" type="radio" /> Option #2</label>
-<label><input name="radio" type="radio" /> Option #3</label>
-</form>
-<h2 id="grids">Grids</h2>
-<p>Add the <code>grid</code> class to a container to divide up the
-horizontal space evenly for the cells. Note that it maintains the
-monospace, so the total width might not be 100%. Here are six grids with
-increasing cell count:</p>
-<div class="grid">
-<input readonly value="1" />
-</div>
-<div class="grid">
-<input readonly value="1" /><input readonly value="2" />
-</div>
-<div class="grid">
-<input readonly value="1" /><input readonly value="2" /><input readonly value="3" />
-</div>
-<div class="grid">
-<input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" />
-</div>
-<div class="grid">
-<input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" />
-</div>
-<div class="grid">
-<input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" /><input readonly value="6" />
-</div>
-<p>If we want one cell to fill the remainder, we set
-<code>flex-grow: 1;</code> for that particular cell.</p>
-<div class="grid">
-<input readonly value="1" /><input readonly value="2" /><input readonly value="3!" style="flex-grow: 1;" /><input readonly value="4" /><input readonly value="5" /><input readonly value="6" />
-</div>
-<h2 id="ascii-drawings">ASCII Drawings</h2>
-<p>We can draw in <code>&lt;pre&gt;</code> tags using <a
-href="https://en.wikipedia.org/wiki/Box-drawing_characters">box-drawing
-characters</a>:</p>
-<pre><code>╭─────────────────╮
-│ MONOSPACE ROCKS │
-╰─────────────────╯</code></pre>
-<p>To have it stand out a bit more, we can wrap it in a
-<code>&lt;figure&gt;</code> tag, and why not also add a
-<code>&lt;figcaption&gt;</code>.</p>
-<figure>
-<pre>
-┌───────┐ ┌───────┐ ┌───────┐
-│Actor 1│ │Actor 2│ │Actor 3│
-└───┬───┘ └───┬───┘ └───┬───┘
-    │         │         │
-    │         │  msg 1  │
-    │         │────────►│
-    │         │         │
-    │  msg 2  │         │
-    │────────►│         │
-┌───┴───┐ ┌───┴───┐ ┌───┴───┐
-│Actor 1│ │Actor 2│ │Actor 3│
-└───────┘ └───────┘ └───────┘</pre>
-<figcaption>
-Example: Message passing.
-</figcaption>
-</figure>
-<p>Let’s go wild and draw a chart!</p>
-<figure>
-<pre>
-                      Things I Have
+<header>
+    <h1>Labs &ndash; Maxcomperatore</h1>
+    <p>A relic museum showcasing every project I've ever made.
+        From humble hello-worlds to full-blown websites, see how I've grown, learned, failed, and succeeded.</p>
+</header>
 
-    │                                     ████ Usable
-15  │
-    │                                     ░░░░ Broken
-    │
-12  │             ░
-    │             ░
-    │   ░         ░
- 9  │   ░         ░
-    │   ░         ░
-    │   ░         ░                    ░
- 6  │   █         ░         ░          ░
-    │   █         ░         ░          ░
-    │   █         ░         █          ░
- 3  │   █         █         █          ░
-    │   █         █         █          ░
-    │   █         █         █          ░
- 0  └───▀─────────▀─────────▀──────────▀─────────────
-      Socks     Jeans     Shirts   USB Drives
-</pre>
-</figure>
-<h2 id="media">Media</h2>
-<p>Media objects are supported, like images and video:</p>
-<figure>
-<img src="castle.jpg" alt="A room in an old French castle (2024)" />
-<figcaption aria-hidden="true">A room in an old French castle
-(2024)</figcaption>
-</figure>
-<figure>
-<video
-src="https://upload.wikimedia.org/wikipedia/commons/e/e0/The_Center_of_the_Web_%281914%29.webm"
-controls=""><a
-href="https://upload.wikimedia.org/wikipedia/commons/e/e0/The_Center_of_the_Web_%281914%29.webm">The
-Center of the Web (1914), Wikimedia</a></video>
-<figcaption aria-hidden="true"><a
-href="https://en.wikisource.org/wiki/Page:The_Center_of_the_Web_(1914).webm/11">The
-Center of the Web (1914), Wikimedia</a></figcaption>
-</figure>
-<p>They extend to the width of the page, and add appropriate padding in
-the bottom to maintain the monospace grid.</p>
-<h2 id="discussion">Discussion</h2>
-<p>That’s it for now. I’ve very much enjoyed making this, pushing my CSS
-chops and having a lot of fun with the design. If you like it or even
-decide to use it, please <a href="https://x.com/owickstrom">let me
-know</a>.</p>
-<p>The full source code is here: <a
-href="https://github.com/owickstrom/the-monospace-web">github.com/owickstrom/the-monospace-web</a></p>
-<p>Finally, a massive shout-out to <a
-href="https://x.com/usgraphics">U.S. Graphics Company</a> for all the
-inspiration.</p>
-  <div class="debug-grid"></div>
-  <script src="src/index.js"></script>
+<nav>
+    <ul>
+        <li><a href="#timeline">Timeline Overview</a></li>
+        <li><a href="#projects">Projects List</a></li>
+    </ul>
+</nav>
+
+<main>
+    <!-- Timeline Overview with ASCII Graph -->
+    <section id="timeline">
+        <header>
+            <h2>Timeline Overview</h2>
+        </header>
+        <figure>
+          <pre>
+┌─────────────────────────────────────────────────────────────┐
+│                           Timeline                          │
+└─────────────────────────────────────────────────────────────┘
+May '23:  Core Defense
+Jul '23:  Hangman
+Jan '24:  Array Utils, Rendimientos Mercado Pago, Unreal Engine Project Cleaner
+Feb '24:  Pixelated Drift, The Great Chocolate Caper
+May '24:  Hill Climb Racing, Portal Dimansion, Flag Chasing
+Jul '24:  mercadix, maxcomperatore.com, Ephemera, ArgentoFX
+Aug '24:  Blinklink
+Sep '24:  Subnautica IB
+Oct '24:  Linking Values, Free Games Tracker, Free To Play Tracker, Retro Escape, Swipey Cars, Ultimate Car Debugger Lite
+Nov '24:  Kiosko Dalvian, Lo de Brown Site
+Jan '25:  SPU (Soul Processing Unit)
+Feb '25:  0xwik1tr0n
+Mar '25:  Luming Gallery, WalkGuessr
+          </pre>
+            <figcaption>Project Timeline (Last Updated: 10 March 2025)</figcaption>
+        </figure>
+    </section>
+
+    <!-- Projects List -->
+    <section id="projects">
+        <header>
+            <h2>Projects List</h2>
+        </header>
+
+        <!-- May 2023 -->
+        <article>
+            <header>
+                <h3>Core Defense</h3>
+                <p>
+                    <time datetime="2023-05">May 2023</time> &ndash;
+                    A first game made with a buddy in Unreal Engine. I was a newbie learning Unreal basics.
+                </p>
+            </header>
+            <p>
+                <a href="https://github.com/GonToreGames/Core_Defense">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <!-- Jul 2023 -->
+        <article>
+            <header>
+                <h3>Hangman</h3>
+                <p>
+                    <time datetime="2023-07">Jul 2023</time> &ndash;
+                    A single-file, CLI-based hangman game in C++, built while learning programming and C++.
+                </p>
+            </header>
+            <p>
+                <a href="https://github.com/pyoneerC/hangman">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <!-- Jan 2024 -->
+        <article>
+            <header>
+                <h3>Array Utils</h3>
+                <p>
+                    <time datetime="2024-01">Jan 2024</time> &ndash;
+                    A blueprint library of array utilities for Unreal Engine (mostly C++ STL algorithms).
+                </p>
+            </header>
+            <p>
+                <a href="https://www.fab.com/listings/c0a410ff-18ff-4e4e-ba70-2b30d5132f80">View Project</a>
+                | Revenue: $17
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>Rendimientos Mercado Pago</h3>
+                <p>
+                    <time datetime="2024-01">Jan 2024</time> &ndash;
+                    A web tool to calculate returns on Mercado Pago for personal finances.
+                </p>
+            </header>
+            <p>
+                <a href="https://rendimientosmercadopago.netlify.app/">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>Unreal Engine Project Cleaner</h3>
+                <p>
+                    <time datetime="2024-01">Jan 2024</time> &ndash;
+                    A PowerShell script for cleaning out unused Unreal Engine folders.
+                </p>
+            </header>
+            <p>
+                <a href="https://github.com/pyoneerC/Unreal-Engine-Project-Cleaner">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <!-- Feb 2024 -->
+        <article>
+            <header>
+                <h3>Pixelated Drift</h3>
+                <p>
+                    <time datetime="2024-02">Feb 2024</time> &ndash;
+                    An Unreal Engine game about driving a pixelated pickup.
+                </p>
+            </header>
+            <p>
+                <a href="https://pyoneerc1.itch.io/pixelateddrift">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>The Great Chocolate Caper</h3>
+                <p>
+                    <time datetime="2024-02">Feb 2024</time> &ndash;
+                    A game about rolling out of a house as a ball of chocolate surrounded by hungry bots.
+                </p>
+            </header>
+            <p>
+                <a href="https://pyoneerc1.itch.io/the-great-chocolate-caper">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <!-- May 2024 -->
+        <article>
+            <header>
+                <h3>Hill Climb Racing</h3>
+                <p>
+                    <time datetime="2024-05">May 2024</time> &ndash;
+                    A mini hill climb racing clone made in Unity to learn the engine.
+                </p>
+            </header>
+            <p>
+                <a href="https://pyoneerc1.itch.io/hill-climb-racing-recreation">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>Portal Dimansion</h3>
+                <p>
+                    <time datetime="2024-05">May 2024</time> &ndash;
+                    A fast-paced simulator about dodging obstacles, created for a university game jam.
+                </p>
+            </header>
+            <p>
+                <a href="https://candee123.itch.io/portaldimansion">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>Flag Chasing</h3>
+                <p>
+                    <time datetime="2024-05">May 2024</time> &ndash;
+                    A Unity game where you control a ball to touch golf pits, designed for learning purposes.
+                </p>
+            </header>
+            <p>
+                <a href="https://pyoneerc1.itch.io/flag-chasing">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <!-- Jul 2024 -->
+        <article>
+            <header>
+                <h3>mercadix</h3>
+                <p>
+                    <time datetime="2024-07">Jul 2024</time> &ndash;
+                    A practical Python tool that, given a Mercado Libre product, generates a price distribution graph (Dad needed this!).
+                </p>
+            </header>
+            <p>
+                <a href="https://maxcomperatore.store/">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>maxcomperatore.com</h3>
+                <p>
+                    <time datetime="2024-07">Jul 2024</time> &ndash;
+                    My personal website and portfolio, hailed as one of the best tech portfolios in LatAm.
+                </p>
+            </header>
+            <p>
+                <a href="https://maxcomperatore.com/">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>Ephemera</h3>
+                <p>
+                    <time datetime="2024-07">Jul 2024</time> &ndash;
+                    A puzzle game crafted in Unreal Engine using a horror engine for a spooky twist.
+                </p>
+            </header>
+            <p>
+                <a href="https://pyoneerc1.itch.io/the-dungeon">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>ArgentoFX</h3>
+                <p>
+                    <time datetime="2024-07">Jul 2024</time> &ndash;
+                    A RESTful API delivering the latest foreign exchange rates in Argentina.
+                </p>
+            </header>
+            <p>
+                <a href="https://maxcomperatore.online/docs">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <!-- Aug 2024 -->
+        <article>
+            <header>
+                <h3>Blinklink</h3>
+                <p>
+                    <time datetime="2024-08">Aug 2024</time> &ndash;
+                    A high-performance URL shortener service built to explore databases and backend systems.
+                </p>
+            </header>
+            <p>
+                <a href="https://urlshortener1-16k1.onrender.com/docs">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <!-- Sep 2024 -->
+        <article>
+            <header>
+                <h3>Subnautica IB</h3>
+                <p>
+                    <time datetime="2024-09">Sep 2024</time> &ndash;
+                    An underwater welding and PPE placement simulator created during a technical interview.
+                </p>
+            </header>
+            <p>
+                <a href="https://www.youtube.com/playlist?list=PLRFx0xkqiuIRBvBhi3Ch-rqaP0MQsqxYM">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <!-- Oct 2024 -->
+        <article>
+            <header>
+                <h3>Linking Values</h3>
+                <p>
+                    <time datetime="2024-10">Oct 2024</time> &ndash;
+                    A compliance software tool for managing provider data, generating detailed reports, and offering a learning marketplace. (Job related)
+                </p>
+            </header>
+            <p>
+                <a href="https://linkingvalues.net/">View Project</a>
+                | Revenue: $[REDACTED]
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>Free Games Tracker</h3>
+                <p>
+                    <time datetime="2024-10">Oct 2024</time> &ndash;
+                    A Flutter app that aggregates current free games across all platforms. (Thanks, Colin!)
+                </p>
+            </header>
+            <p>
+                <a href="https://pyoneerc1.itch.io/free-games-tracker">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>Free To Play Tracker</h3>
+                <p>
+                    <time datetime="2024-10">Oct 2024</time> &ndash;
+                    Similar to Free Games Tracker, but focused on listing all free-to-play games.
+                </p>
+            </header>
+            <p>
+                <a href="https://pyoneerc1.itch.io/free-to-play-database">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>Retro Escape</h3>
+                <p>
+                    <time datetime="2024-10">Oct 2024</time> &ndash;
+                    A simple Unreal Engine game featuring AI opponents, built for an assignment.
+                </p>
+            </header>
+            <p>
+                <a href="https://pyoneerc1.itch.io/trabajo-final-prog-2024">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>Swipey Cars</h3>
+                <p>
+                    <time datetime="2024-10">Oct 2024</time> &ndash;
+                    A Unity game that requires precise swiping to guide a car to its goal—balancing challenge and ad integration.
+                </p>
+            </header>
+            <p>
+                <a href="https://pyoneerc1.itch.io/swipeycars">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>Ultimate Car Debugger Lite</h3>
+                <p>
+                    <time datetime="2024-10">Oct 2024</time> &ndash;
+                    A plugin wrapping blueprint nodes for debugging cars in Unreal Engine, crafted for the Unreal Marketplace.
+                </p>
+            </header>
+            <p>
+                <a href="https://www.fab.com/listings/4f725003-f9d2-4a2d-b86a-67e131d5c72d">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <!-- Nov 2024 -->
+        <article>
+            <header>
+                <h3>Kiosko Dalvian</h3>
+                <p>
+                    <time datetime="2024-11">Nov 2024</time> &ndash;
+                    A kiosk management system for handling sales and inventory (Freelance Project).
+                </p>
+            </header>
+            <p>
+                <a href="https://github.com/pyoneerC/kiosko-dalvian">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>Lo de Brown Site</h3>
+                <p>
+                    <time datetime="2024-11">Nov 2024</time> &ndash;
+                    A solo project to build a superior website for a local restaurant (Freelance Project).
+                </p>
+            </header>
+            <p>Revenue: $0</p>
+        </article>
+
+        <!-- Jan 2025 -->
+        <article>
+            <header>
+                <h3>SPU (Soul Processing Unit)</h3>
+                <p>
+                    <time datetime="2025-01">Jan 2025</time> &ndash;
+                    A game built in Kivy and powered by a Llama LLM where you act as a gatekeeper in heaven, interacting with uniquely generated souls.
+                </p>
+            </header>
+            <p>
+                <a href="https://pyoneerc1.itch.io/spu">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <!-- Feb 2025 -->
+        <article>
+            <header>
+                <h3>0xwik1tr0n</h3>
+                <p>
+                    <time datetime="2025-02">Feb 2025</time> &ndash;
+                    A fast, lightweight Transformer SLM for character-level text generation, ONNX-optimized with FastAPI.
+                </p>
+            </header>
+            <p>
+                <a href="https://0xwik1tr0n.netlify.app/">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <!-- Mar 2025 -->
+        <article>
+            <header>
+                <h3>Luming Gallery</h3>
+                <p>
+                    <time datetime="2025-03">Mar 2025</time> &ndash;
+                    A gallery-styled journal with news scraped from Reddit’s r/news, designed with a monetization mindset.
+                </p>
+            </header>
+            <p>
+                <a href="https://pyoneerc.github.io/lumingallery/">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+
+        <article>
+            <header>
+                <h3>WalkGuessr</h3>
+                <p>
+                    <time datetime="2025-03">Mar 2025</time> &ndash;
+                    A GeoGuessr-like game featuring 3D YouTube videos and maps to guess your location using visual and audio cues.
+                </p>
+            </header>
+            <p>
+                <a href="https://walkguessr.netlify.app/">View Project</a>
+                | Revenue: $0
+            </p>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <p>
+        Visit my main site: <a href="https://maxcomperatore.com/">maxcomperatore.com</a>
+    </p>
+    <p>
+        Last Updated: <time datetime="2025-03-10">10 March 2025</time>
+    </p>
+</footer>
+
+<script src="src/index.js"></script>
 </body>
 </html>
-
-changes this and using semantic html ill list every fucking project ive made in my life. i dont care if its a hello world or a full blown website. i want to see how much i have done in my life. i want to see how much i have grown. i want to see how much i have learned. i want to see how much i have changed. i want to see how much i have improved. i want to see how much i have failed. i want to see how much i have succeeded.
-made all this cool looking and indexable searchable and shit order by date and shit use the graph thingy here to showcase the timeline idk make it good bro a relic museum
-the majoruty of stuff is made on python and html,css and js.
-this along side other crap
-
-July 2024 - mercadix - you input a product on mercado libre and using python it gives you a graph with the price distribution - https://maxcomperatore.store/ - it eas practical and cool, dad needed this - revenue: $0
-Feb 2025 - 0xwik1tr0n - Fast, lightweight Transformer SLM for character-level text generation, ONNX-optimized with FastAPI. https://0xwik1tr0n.netlify.app/ - because i wanted to lear llms and more stuff - revenue: $0
-May 2024 - Hill Climb Racing - A mini hill climb racing clone made in unity - https://pyoneerc1.itch.io/hill-climb-racing-recreation - wanted to learn unity - revenue: $0
-Mar 2025 - Luming Gallery - A gallery styled journal with rectangles with current news scraping reddit's r/news - https://pyoneerc.github.io/lumingallery/ - wanted to make something cool and monetize it - revenue: $0
-Oct 2024 - Linking Values - A software made in the job for a compliance firm that permits clients of the software to input providers and this provide their data and the analysts at the company provide a detaield report of the situation and then a learning marketplace for providers to learn and improve their score - https://linkingvalues.net/ - job related - revenue: $[REDACTED]
-Jan 2024 - Array Utils - An blueprint librarie woth array utilities for unreal engine arrays, mostly c++ stl algorithms - https://www.fab.com/listings/c0a410ff-18ff-4e4e-ba70-2b30d5132f80 - wanted to publish something on the unreal marketplace - revenue: $17
-Jan 2025 - SPU (Soul Processing Unit) - A game made in kivy and llama llm in where you are a gatekeeper in heaven and you see randomly generated souls and their backstory and you can chat with them, you can see their picture, backstory and have a chat with them, they can even tell jokes - https://pyoneerc1.itch.io/spu - wanted to learn more about ai, llms and make a fun game with it - revenue: $0
-Oct 2024 - Free Games Tracker - Using a public API i did a flutter app that consumes it and tells you the current free games in every platform. Thanks Colin. - https://pyoneerc1.itch.io/free-games-tracker - wanted to learn flutter - revenue: $0
-Oct 2024 - Free To Play Tracker - Extremely similar to the free games tracker but instead with all free to play games across all platforms - https://pyoneerc1.itch.io/free-to-play-database - wanted to learn flutter - revenue: $0
-Sep 2024 - Subnautica IB - Underwater Welding and PPE Placement Simulator made in interview for a technical interview - https://www.youtube.com/playlist?list=PLRFx0xkqiuIRBvBhi3Ch-rqaP0MQsqxYM - job interview - revenue: $0
-Jul 2024 - maxcomperatore.com - My personal website and portoflio, referred as the best tech portfolio in latam by discord users - https://maxcomperatore.com/ - had to have have a personal website to showcase myself - revenue: $0, altough i got exposure, opportunities and elses for it indirectly
-Feb 2024 - Pixelated Drift - A game made in unreal engine about driving around with a pixelated pickup - https://pyoneerc1.itch.io/pixelateddrift - wanted to learn unreal engine - revenue: $0
-Oct 2024 - Retro Escape - A simple game made in unreal with AIs and other shit for an assignment - https://pyoneerc1.itch.io/trabajo-final-prog-2024 - assignment - revenue: $0
-Feb 2024 - The Great Chocolate Caper - A game about rolling out of a house as a ball of chocolate surrounded by hungry bots - https://pyoneerc1.itch.io/the-great-chocolate-caper - wanted to do a cool game - revenue: $0
-May 2024 - Portal Dimansion - A running fast paced simualtor about dodging obstacles, game jam project - https://candee123.itch.io/portaldimansion - obligatory university game jam - revenue: $0
-Oct 2024 - Swipey Cars - A unity games where you have to precisely swipe in a phone so the car can reach the goal perfectly not too harsh not strong with ads - https://pyoneerc1.itch.io/swipeycars -  wanted to learn unity ads - revenue: $0
-May 2024 - Flag Chasing - A  game made in unity where you control a ball and have to touch golf pits - https://pyoneerc1.itch.io/flag-chasing - learning unity - revenue: $0
-Jul 2024 - Ephemera - A puzzle game made in unreal engine made with horror engine - https://pyoneerc1.itch.io/the-dungeon - wanted to learn horror engine - revenue: $0
-Oct 2024 - Ultimate Car Debugger Lite - A plugin wrapping blueprint nodes for debugging cars in unreal - https://www.fab.com/listings/4f725003-f9d2-4a2d-b86a-67e131d5c72d - wanted to do cool plugins for unreal marketplace - revenue: $0
-Mar 2025 - WalkGuessr - A game like geoguesser but instead with 3D youtube videos and a map and you have to guess with visual and sound stimuli where in the world you are - https://walkguessr.netlify.app/ - wanting to do a community around creations and monetize them - revenue so far: $0
-Jul 2024 - ArgentoFX - RESTful API to obtain the latest foreign exchange rates in Argentina. - https://maxcomperatore.online/docs - wanted to learn fastapis and backend development - revenue: $0
-Aug 2024 - Blinklink - High-Performance URL Shortener Service - https://urlshortener1-16k1.onrender.com/docs - wanted to learn shorturls and databases worked on the inside - revenue:$0
-Jan 2024 - Rendimientos Mercado Pago - Herramienta web para calcular rendimientos de Mercado Pago. - https://rendimientosmercadopago.netlify.app/ - wanted to do a cool app for personal finances - revenue: $0
-Jan 2024 - Unreal Engine Project Cleaner - A powershells script for cleaning useless unreal engine folders in your project. - https://github.com/pyoneerC/Unreal-Engine-Project-Cleaner - wanted to learn powershell and seemed like a cool project - revenue:$0
-Jul 2023 - Hangman - C++ Single File CLI-based hangman game. - https://github.com/pyoneerC/hangman - was learning programming and c++ - revenue: $0
-May 2023 - Core Defense - A (my first game) game made with my buddy in unreal engine - https://github.com/GonToreGames/Core_Defense - Newbie, was learning unreal basics - revenue: $0
-Nov 2024 - Kiosko Dalvian - A kiosko management system for managing sales and inventory - https://github.com/pyoneerC/kiosko-dalvian - Freelance Project - revenue:$0
-Nov 2024 - Lo de Brown Site - Singlehandledly build a better site compared to what they have now ( a resturant in my town) - Freelance Project - revenue 0
-
-
-Last Updated 10 march 2025
+```
